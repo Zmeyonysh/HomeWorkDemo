@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  min-height: 100vh;
+}
+
+.form {
+  border: 1px solid #333;
+  border-radius: 6px;
+  max-width: 400px;
+  width: 100%;
+  padding: 30px;
+}
+
+.form-group {
+  border: none;
+  padding: 0;
+}
+
+.form-group-title {
+  font-weight: 700;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.label {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.textarea {
+  resize: vertical;
+  max-height: 150px;
+  min-height: 30px;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 5px 12px;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+.input:disabled,
+.textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.label1 {
+  margin-bottom: 15px;
+  padding-left: 21px;
+}
+
+.checkbox {
+  vertical-align: middle; /* Выравнивает чекбокс на одном уровне с текстом */
+  width: auto; /* Сбрасывает width: 100%, заданный для всех input */
+  margin: 0 6px 0 0; /* Сбрасывает margin-bottom: 20px и добавляет отступ справа */
+  /* cursor: pointer; */
+  /* accent-color: #9d5ed8; */ /* слабая поддержка*/
+  /* display: none; */
+  /* opacity: 0; */
+  appearance: none;
+  position: absolute;
+  outline: none;
+}
+
+.checkbox::after {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  margin-left: -20px;
+  margin-top: 2px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.checkbox:checked::after {
+  background:
+    url("../images/check-icon.svg") no-repeat center,
+    #9d5ed8;
+}
+
+.checkbox-text {
+  font-size: 14px;
+  vertical-align: middle; /* Выравнивает текст на одном уровне с чекбоксом */
+  cursor: pointer;
+}
+
+.button {
+  border: none;
+  cursor: pointer;
+  padding: 6px 18px;
+  border-radius: 6px;
+  background-color: #9d5ed8;
+  color: aliceblue;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  /* color: #2e3036;
+  background-color: #d8d3cd; */
+  opacity: 0.8;
+}
+.button:not(disabled)active {
+  transform: scale(1.07);
+  background-color: #6812b8;
+}
+
+.button:disabled,
+.checkbox:disabled::after {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.input:focus-visible,
+.textarea:focus-visible,
+.checkbox:focus-visible::after,
+.button:focus-visible {
+  outline: 2px solid #9d5ed8;
+  outline-offset: 1px;
+}
