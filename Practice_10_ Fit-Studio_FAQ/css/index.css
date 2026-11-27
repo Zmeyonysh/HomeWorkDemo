@@ -1,0 +1,198 @@
+.hero {
+  position: relative;
+  padding-top: 80px;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: url(../images/decor-large-icon.svg) repeat-x;
+  width: 100%;
+  height: 48px;
+  bottom: 106px;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.hero h1 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  font-size: 62px;
+  line-height: 115%;
+  text-transform: uppercase;
+  color: #2c332f;
+  margin-bottom: 40px;
+}
+
+.hero h1 strong {
+  font-weight: 600;
+  color: #3596ed;
+}
+
+.hero-info .text {
+  margin-bottom: 140px;
+  max-width: 439px;
+}
+
+.hero-images {
+  position: relative;
+  display: flex;
+}
+
+.hero-choose {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #535755;
+  padding: 22px;
+  max-width: 161px;
+  /* height: 86px; */
+  text-align: center;
+  left: 50%;
+  top: 40px;
+  transform: translateX(-50%);
+}
+
+.news-container {
+  display: flex;
+  /* justify-content: space-between;
+  align-items: center; */
+  gap: 28px;
+}
+
+.news-article {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #d3cbd9;
+  max-width: 284px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  /* margin-top: auto; */
+}
+
+.news-article img {
+  display: block;
+}
+
+.news-info {
+  padding: 20px 20px 0;
+  margin-bottom: 12px;
+}
+
+.news-date {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.news-article footer {
+  padding: 0 20px 20px;
+  margin-top: auto;
+}
+
+.news-link {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #3596ed;
+}
+
+.news-link:visited {
+  color: #3596ed;
+}
+
+.news-link:hover::after {
+  transform: translateX(5px);
+}
+
+.news-link::after {
+  display: inline-block;
+  content: "";
+  width: 22px;
+  height: 9px;
+  background-image: url(../images/arrow-right-icon.svg);
+  transition: transform 0.2s;
+}
+
+.faq {
+  position: relative;
+}
+
+.faq::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: url(../images/decor-large-icon.svg) repeat-x;
+  width: calc(50% - 250px);
+  height: 48px;
+  top: 215px;
+}
+
+.faq-container {
+  display: flex;
+  gap: 28px;
+}
+
+details {
+  margin-bottom: 20px;
+  border-block: 1px solid #d3cbd9;
+}
+
+details summary::after {
+  transition: transform 0.3s;
+}
+
+details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  list-style: none;
+  padding: 20px;
+  cursor: pointer;
+  /* user-select: none; делает невозможным копирование текста */
+}
+
+summary::after {
+  content: "";
+  display: inline-block;
+  width: 17px;
+  height: 23px;
+  background: url(../images/arrow-down-icon.svg) no-repeat center / cover;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+details::details-content {
+  block-size: 0; /* Высота в закрытом состоянии */
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    block-size 0.35s ease,
+    opacity 0.35s ease,
+    content-visibility 0.35s allow-discrete;
+}
+
+details[open]::details-content {
+  block-size: auto; /* Плавно раскрывается ровно на высоту контента */
+  opacity: 1;
+}
+
+details > p {
+  padding: 0 20px 20px;
+}
